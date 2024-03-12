@@ -33,7 +33,7 @@ class DB
             $sql = "insert into `$this->table` ";
             $cols = "(`" . join("`,`", array_keys($array)) . "`)";
             $vals = "('" . join("','", $array) . "')";
-            $sql = $cols . "values" . $vals;
+            $sql.= $cols . "values" . $vals;
         }
         return $this->pdo->exec($sql);
     }
