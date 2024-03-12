@@ -41,4 +41,11 @@
             location.reload();
         })
     })
+    $(".del-btn").on('click',function(){
+        let id= $(this).data('id');
+        let table="movie"
+        $.post("./api/del.php",{id,table},()=>{
+            location.reload()
+        })
+    })
 </script>
