@@ -124,7 +124,7 @@ function to($url)
 {
     header("location:$url");
 }
-$seat=[
+$sess=[
     1=>'14:00~16:00',
     2=>'16:00~18:00',
     3=>'18:00~20:00',
