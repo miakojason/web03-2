@@ -22,8 +22,8 @@
         $rows = $Poster->all(['sh' => 1]);
         foreach ($rows as $idx => $row) {
         ?>
-          <div class="im btn" id="ssaa<?= $idx; ?>">
-            <img src="./img/<?= $row['img']; ?>" style="width:95px;height:100px;">
+          <div class="im" id="ssaa<?= $idx; ?>" style="margin:2px 5px;">
+            <img onclick="slide(<?= $idx; ?>)" class="btn"  src="./img/<?= $row['img']; ?>" style="width:80px;height:100px;">
           </div>
         <?php
         }
@@ -44,7 +44,7 @@
           if (typeof(n) == 'undefined') {
             next = now + 1;
             if (next >= total) {
-              next = 0;
+              next = 1;
             }
           } else {
             next = n
@@ -69,11 +69,6 @@
           now = next;
         }
 
-
-        $(".btn").on('click', function() {
-          let idx = $(this).index();
-          slide(idx);
-        })
         $(".btns").hover(
           function() {
             clearInterval(timer)

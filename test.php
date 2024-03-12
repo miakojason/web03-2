@@ -5,13 +5,13 @@
 //     echo $sql;
 //     echo "<br>";
 // }
-// for($i=1;$i<=9;$i++){
-//     $sql="INSERT INTO `movie` (`id`, `name`, `level`, `length`, `ondate`, `publish`, `director`, `trailer`, `poster`, `intro`, `rank`, `sh`)
-//                        VALUES (NULL, '電影0{$i}', '1', '120', '2024-03-12', '發行商0{$i}', '導演0{$i}', '03B0{$i}v.mp4', '03B0{$i}.png', '院線片0{$i}簡介', '{$i}', '1');
-//     ";
-//     echo $sql;
-//     echo "<br>";
-// }
+for($i=1;$i<=9;$i++){
+    $sql="INSERT INTO `movie` (`id`, `name`, `level`, `length`, `ondate`, `publish`, `director`, `trailer`, `poster`, `intro`, `rank`, `sh`)
+                       VALUES (NULL, '電影0{$i}', '1', '120', '2024-03-12', '發行商0{$i}', '導演0{$i}', '03B0{$i}v.mp4', '03B0{$i}.png', '院線片0{$i}簡介', '{$i}', '1');
+    ";
+    echo $sql;
+    echo "<br>";
+}
 // for($i=10;$i<=13;$i++){
 //     $sql="INSERT INTO `movie` (`id`, `name`, `level`, `length`, `ondate`, `publish`, `director`, `trailer`, `poster`, `intro`, `rank`, `sh`)
 //                        VALUES (NULL, '電影{$i}', '1', '120', '2024-03-12', '發行商{$i}', '導演{$i}', '03B{$i}}v.mp4', '03B{$i}}.png', '院線片{$i}簡介', '{$i}', '1');
