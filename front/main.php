@@ -16,19 +16,20 @@
         ?>
       </div>
       <div class="control">
-        <div class="left">
+        <div class="left"><img src="./icon/l.jpg" alt=""></div>
           <div class="btns">
             <?php
             foreach ($rows as $idx => $row) {
             ?>
+            <div class="btn">
+              <div><img src="./img/<?=$row['img'];?>" alt=""></div>
+              <div><?=$row['name'];<?>/div>
+            </div>
             <?php
             }
             ?>
-            <div class="btn">
-              <div><img src="./img/<?=$row['img'];?>" alt=""></div>
-              <div><?=$row['name']<;?>/div>
-            </div>
           </div>
+          <div class="right"><img src="./icon/r.jpg" alt=""></div>
         </div>
       </div>
 
