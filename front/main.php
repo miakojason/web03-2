@@ -15,21 +15,23 @@
         }
         ?>
       </div>
-
-      <div class="btns" style="width: 420px;height:100px;display:flex">
-        <div onclick="pp(1)" style="display:flex;align-items:center;"><img src="./icon/l.jpg" alt=""></div>
-        <?php
-        $rows = $Poster->all(['sh' => 1]);
-        foreach ($rows as $idx => $row) {
-        ?>
-          <div class="im" id="ssaa<?= $idx; ?>" style="margin:2px 5px;">
-            <img onclick="slide(<?= $idx; ?>)" class="btn"  src="./img/<?= $row['img']; ?>" style="width:80px;height:100px;">
+      <div class="control">
+        <div class="left">
+          <div class="btns">
+            <?php
+            foreach ($rows as $idx => $row) {
+            ?>
+            <?php
+            }
+            ?>
+            <div class="btn">
+              <div><img src="./img/<?=$row['img'];?>" alt=""></div>
+              <div><?=$row['name']<;?>/div>
+            </div>
           </div>
-        <?php
-        }
-        ?>
-        <div onclick="pp(2)" style="display:flex;align-items:center;"><img src="./icon/r.jpg"></div>
+        </div>
       </div>
+
       <script>
         $(".item").eq(0).show(); //指定第一張海報先顯示
         let total = <?= $Poster->count(['sh' => 1]); ?> //計算有幾張海報
@@ -80,25 +82,6 @@
             }, 3000);
           }
         )
-        //
-        var nowpage = 1,
-          num = <?= $Poster->count(['sh' => 1]); ?>;
-
-        function pp(x) {
-          var s, t;
-          if (x == 1 && nowpage - 1 >= 0) {
-            nowpage--;
-          }
-          if (x == 2 && nowpage < (num - 4)) {
-            nowpage++;
-          }
-          $(".im").hide()
-          for (s = 0; s <= 3; s++) {
-            t = s * 1 + nowpage * 1;
-            $("#ssaa" + t).show()
-          }
-        }
-        pp(1)
       </script>
     </div>
   </div>
