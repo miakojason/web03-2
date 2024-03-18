@@ -27,24 +27,33 @@
     ?>
 </div>
 <script>
-    $(".sw-btn").on('click',function(){
-        let id=$(this).data('id');
-        let sw=$(this).data('sw');
-        let table="movie";
-        $.post("./api/sw.php",{id,sw,table},()=>{
+    $(".sw-btn").on('click', function() {
+        let id = $(this).data('id');
+        let sw = $(this).data('sw');
+        let table = "movie";
+        $.post("./api/sw.php", {
+            id,
+            sw,
+            table
+        }, () => {
             location.reload();
         })
     })
-    $(".show-btn").on('click',function(){
-        let id=$(this).data('id');
-        $.post("./api/show.php",{id},()=>{
+    $(".show-btn").on('click', function() {
+        let id = $(this).data('id');
+        $.post("./api/show.php", {
+            id
+        }, () => {
             location.reload();
         })
     })
-    $(".del-btn").on('click',function(){
-        let id= $(this).data('id');
-        let table="movie"
-        $.post("./api/del.php",{id,table},()=>{
+    $(".del-btn").on('click', function() {
+        let id = $(this).data('id');
+        let table = "movie"
+        $.post("./api/del.php", {
+            id,
+            table
+        }, () => {
             location.reload()
         })
     })
