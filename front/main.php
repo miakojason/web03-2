@@ -115,6 +115,28 @@
       }, 3000);
     }
   )
+  let p=0;
+  $(".left,.right").on('click',function(){
+    let arrow=$(this).attr('class')
+    switch(arrow){
+      case "right": 
+        if(p+1<=(total-4)){//如果是向右按鈕，則判斷p+1是否小於總海報數量-4
+          p=p+1;
+        }
+        break;
+        case "left":
+          if(p-1>=0){
+            p=p-1;
+          }
+          break;
+
+    }
+    $(".btn").animate({right:90*p})
+  })
+  $(".btn").on("click",function(){
+    let idx=$(this).index()
+    slide(idx);
+  })
 </script>
 <div class="half">
   <h1>院線片清單</h1>
