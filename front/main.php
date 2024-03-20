@@ -137,6 +137,13 @@
     let idx=$(this).index()
     slide(idx);
   })
+  $(".btns").hover(function(){
+    clearInterval(timer)
+  },
+  function(){
+    timer=setInterval(()=>{
+      slide()},3000)
+  })
 </script>
 <div class="half">
   <h1>院線片清單</h1>
